@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venexia Studio | Marketing Digital & IA</title>
+    <style>
+        :root {
+            --bg-principal: #0f172a;
+            --bg-secundario: #1e293b;
+            --texto-principal: #f8fafc;
+            --texto-secundario: #94a3b8;
+            --acento: #38bdf8;
+            --acento-hover: #0ea5e9;
+            --borde: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--bg-secundario);
+            border-bottom: 1px solid var(--borde);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .contenedor-header {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--texto-principal);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--acento);
+        }
+
+        nav a {
+            color: var(--texto-secundario);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--acento);
+        }
+
+        .hero {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: var(--acento);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--texto-secundario);
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        .badge-reto {
+            display: inline-block;
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--acento);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .contenedor-principal {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .contenedor-principal {
+                grid-template-columns: 1fr;
+            }
+            .contenedor-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+        }
+
+        .seccion-articulos h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--acento);
+            padding-left: 10px;
+        }
+
+        .tarjeta-post {
+            background-color: var(--bg-secundario);
+            border: 1px solid var(--borde);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .tarjeta-post:hover {
+            transform: translateY(-2px);
+            border-color: var(--acento);
+        }
+
+        .meta-post {
+            font-size: 13px;
+            color: var(--acento);
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tarjeta-post h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .tarjeta-post p {
+            color: var(--texto-secundario);
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .bloque-sidebar {
+            background-color: var(--bg-secundario);
+            border: 1px solid var(--borde);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .bloque-sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--borde);
+            padding-bottom: 8px;
+            color: var(--acento);
+        }
+
+        .sobre-mi p {
+            font-size: 14px;
+            color: var(--texto-secundario);
+            margin-bottom: 10px;
+        }
+
+        .lista-redes {
+            list-style: none;
+        }
+
+        .lista-redes li {
+            margin-bottom: 12px;
+        }
+
+        .enlace-red {
+            display: flex;
+            align-items: center;
+            color: var(--texto-principal);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: var(--bg-principal);
+            border: 1px solid var(--borde);
+            transition: all 0.3s;
+        }
+
+        .enlace-red:hover {
+            border-color: var(--acento);
+            background-color: rgba(56, 189, 248, 0.05);
+            transform: translateX(5px);
+        }
+
+        .enlace-red .icono {
+            margin-right: 12px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .progreso-barra-contenedor {
+            background-color: var(--bg-principal);
+            border-radius: 10px;
+            height: 20px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid var(--borde);
+            margin-top: 10px;
+        }
+
+        .progreso-barra {
+            background: linear-gradient(90deg, var(--acento), var(--acento-hover));
+            height: 100%;
+            width: 0%; /* Cuando consigas clientes, cambia este 0% por 10%, 20%, etc. */
+            transition: width 1s ease-in-out;
+        }
+
+        .progreso-texto {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--bg-secundario);
+            border-top: 1px solid var(--borde);
+            padding: 30px;
+            text-align: center;
+            color: var(--texto-secundario);
+            font-size: 14px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="contenedor-header">
+            <a href="#" class="logo">Venexia<span>Studio</span></a>
+            <nav>
+                <a href="#articulos">Bitácora</a>
+                <a href="#sobre-proyecto">El Reto</a>
+                <a href="#redes">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="badge-reto">EL RETO: De 0 a 10 Clientes Reales</div>
+        <h1>Marketing Digital & <span>Inteligencia Artificial</span></h1>
+        <p>Documentando en tiempo real y con total honestidad el proceso desde el día cero hasta consolidar una agencia independiente en Barcelona.</p>
+    </section>
+
+    <div class="contenedor-principal">
+        
+        <main class="seccion-articulos" id="articulos">
+            <h2>Bitácora de Aprendizaje</h2>
+            
+            <article class="tarjeta-post">
+                <div class="meta-post">Día 0 - Lanzamiento Oficial</div>
+                <h3>El Origen de Venexia Studio: El Salto a la Independencia</h3>
+                <p>Hoy arranco oficialmente este camino. Con 31 años, una familia numerosa que mantener en Barcelona y el deseo inquebrantable de ser libre profesionalmente, fundo Venexia Studio. Este espacio será testigo de cómo aprendo, aplico Inteligencia Artificial para optimizar tiempos, gestiono redes como Community Manager y salgo a buscar a mis primeros clientes locales sin filtros ni secretos. ¡Bienvenidos al día cero!</p>
+            </article>
+
+            <article class="tarjeta-post">
+                <div class="meta-post">Próximamente</div>
+                <h3>Herramientas de IA para un Community Manager Eficiente</h3>
+                <p>En mi próxima publicación detallaré la caja de herramientas digitales que utilizaré para crear copys, programar publicaciones y analizar estadísticas optimizando al máximo mi tiempo disponible.</p>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            
+            <div class="bloque-sidebar" id="sobre-proyecto">
+                <h3>Control de Progreso</h3>
+                <div class="progreso-texto">
+                    <span>Clientes Conseguidos</span>
+                    <span>0 / 10</span> </div>
+                <div class="progreso-barra-contenedor">
+                    <div class="progreso-barra" style="width: 0%;"></div>
+                </div>
+                <p style="font-size: 12px; color: var(--texto-secundario); margin-top: 10px; text-align: center;">
+                    Meta: Vivir 100% de la actividad digital independiente.
+                </p>
+            </div>
+
+            <div class="bloque-sidebar">
+                <h3>Sobre Venexia Studio</h3>
+                <div class="sobre-mi">
+                    <p>Proyecto enfocado en el Growth Marketing, la automatización con IA y la gestión estratégica de comunidades digitales (Community Management).</p>
+                </div>
+            </div>
+
+            <div class="bloque-sidebar" id="redes">
+                <h3>Sigue mi Evolución</h3>
+                <ul class="lista-redes">
+                    <li>
+                        <a href="#" class="enlace-red" target="_blank">
+                            <span class="icono">FB</span> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="enlace-red" target="_blank">
+                            <span class="icono">IG</span> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="enlace-red" target="_blank">
+                            <span class="icono">TK</span> TikTok
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="enlace-red" target="_blank">
+                            <span class="icono">YT</span> YouTube
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Venexia Studio - Construido en Público desde Barcelona, España.</p>
+    </footer>
+
+</body>
+</html>
