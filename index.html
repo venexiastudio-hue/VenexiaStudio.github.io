@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venexia Studio | Marketing Digital & IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-principal: #0f172a;
-            --bg-secundario: #1e293b;
+            --bg-principal: #0b0f19; /* Un azul noche más profundo y premium */
+            --bg-secundario: #161f30;
             --texto-principal: #f8fafc;
             --texto-secundario: #94a3b8;
             --acento: #38bdf8;
             --acento-hover: #0ea5e9;
-            --borde: #334155;
+            --borde: #223147;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
@@ -29,7 +33,8 @@
         }
 
         header {
-            background-color: var(--bg-secundario);
+            background-color: rgba(22, 31, 48, 0.85);
+            backdrop-filter: blur(12px); /* Efecto cristal esmerilado moderno */
             border-bottom: 1px solid var(--borde);
             padding: 20px;
             position: sticky;
@@ -47,9 +52,10 @@
 
         .logo {
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 800;
             color: var(--texto-principal);
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
         .logo span {
@@ -60,7 +66,8 @@
             color: var(--texto-secundario);
             text-decoration: none;
             margin-left: 20px;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 15px;
             transition: color 0.3s;
         }
 
@@ -70,44 +77,53 @@
 
         .hero {
             max-width: 1100px;
-            margin: 40px auto;
-            padding: 40px 20px;
+            margin: 40px auto 20px auto;
+            padding: 60px 20px;
             text-align: center;
             border-bottom: 1px solid var(--borde);
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 46px;
+            font-weight: 800;
             margin-bottom: 20px;
             color: #ffffff;
+            letter-spacing: -1px;
+            line-height: 1.2;
         }
 
         .hero h1 span {
             color: var(--acento);
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             font-size: 18px;
             color: var(--texto-secundario);
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 30px auto;
+            font-weight: 400;
         }
 
         .badge-reto {
             display: inline-block;
-            background-color: rgba(56, 189, 248, 0.1);
+            background-color: rgba(56, 189, 248, 0.08);
             color: var(--acento);
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            margin-bottom: 25px;
         }
 
         .contenedor-principal {
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 20px auto 40px auto;
             padding: 0 20px;
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -125,47 +141,56 @@
             nav a {
                 margin: 0 10px;
             }
+            .hero h1 {
+                font-size: 32px;
+            }
         }
 
         .seccion-articulos h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 25px;
             border-left: 4px solid var(--acento);
-            padding-left: 10px;
+            padding-left: 15px;
+            letter-spacing: -0.5px;
         }
 
         .tarjeta-post {
             background-color: var(--bg-secundario);
             border: 1px solid var(--borde);
-            border-radius: 8px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 30px;
             margin-bottom: 25px;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
 
         .tarjeta-post:hover {
-            transform: translateY(-2px);
+            transform: translateY(-4px);
             border-color: var(--acento);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.05);
         }
 
         .meta-post {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--acento);
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .tarjeta-post h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
         }
 
         .tarjeta-post p {
             color: var(--texto-secundario);
             margin-bottom: 15px;
             font-size: 15px;
+            line-height: 1.7;
         }
 
         .sidebar {
@@ -177,22 +202,31 @@
         .bloque-sidebar {
             background-color: var(--bg-secundario);
             border: 1px solid var(--borde);
-            border-radius: 8px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 25px;
         }
 
         .bloque-sidebar h3 {
             font-size: 18px;
-            margin-bottom: 15px;
+            font-weight: 700;
+            margin-bottom: 18px;
             border-bottom: 1px solid var(--borde);
-            padding-bottom: 8px;
+            padding-bottom: 10px;
             color: var(--acento);
+            letter-spacing: -0.3px;
         }
 
         .sobre-mi p {
             font-size: 14px;
             color: var(--texto-secundario);
-            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .texto-motivacion {
+            font-size: 14px;
+            color: var(--texto-secundario);
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
 
         .lista-redes {
@@ -208,9 +242,10 @@
             align-items: center;
             color: var(--texto-principal);
             text-decoration: none;
-            font-weight: 500;
-            padding: 10px;
-            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 12px;
+            border-radius: 8px;
             background-color: var(--bg-principal);
             border: 1px solid var(--borde);
             transition: all 0.3s;
@@ -224,14 +259,15 @@
 
         .enlace-red .icono {
             margin-right: 12px;
-            font-weight: bold;
-            font-size: 16px;
+            font-weight: 800;
+            font-size: 14px;
+            color: var(--acento);
         }
 
         .progreso-barra-contenedor {
             background-color: var(--bg-principal);
             border-radius: 10px;
-            height: 20px;
+            height: 16px;
             width: 100%;
             overflow: hidden;
             border: 1px solid var(--borde);
@@ -248,15 +284,15 @@
         .progreso-texto {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
+            font-size: 13px;
             margin-bottom: 5px;
-            font-weight: bold;
+            font-weight: 700;
         }
 
         footer {
             background-color: var(--bg-secundario);
             border-top: 1px solid var(--borde);
-            padding: 30px;
+            padding: 40px;
             text-align: center;
             color: var(--texto-secundario);
             font-size: 14px;
@@ -289,11 +325,11 @@
             <h2>Bitácora de Aprendizaje</h2>
             
             <article class="tarjeta-post">
-                <div class="meta-post">Día 0 - Lanzamiento Oficial</div>
-                <h3>El Origen de Venexia Studio: El Salto a la Independencia</h3>
-                <p>Hoy arranco oficialmente este camino. Con 31 años, una familia numerosa que mantener en Barcelona y el deseo inquebrantable de ser libre profesionalmente, fundo Venexia Studio. Este espacio será testigo de cómo aprendo, aplico Inteligencia Artificial para optimizar tiempos, gestiono redes como Community Manager y salgo a buscar a mis primeros clientes locales sin filtros ni secretos. ¡Bienvenidos al día cero!</p>
-            <img src="1779496351667.png" style="width:100%; max-width:500px; display:block; margin:15px auto 0 auto; border-radius:8px;">
-
+                <div class="meta-post">Día 1 - El Inicio del Camino</div>
+                <h3>El Salto a la Independencia: Conviértete en Testigo</h3>
+                <p>Hola, soy Brian de 31 años y con una familia hermosa. Trabajo actualmente como cocinero en un restaurante en España y hoy doy el paso inicial para en 365 días intentar dejar de trabajar a otro para trabajar en mi propio proyecto.</p>
+                <p>Inicio con ustedes como testigos en camino al marketing digital, Manejo de IA, manejo de redes sociales y fotografía para tener un studio integral donde nuestros servicios sean tu placer. ¡Acompáñame y sé parte de mi proceso desde 0 hasta tener mis primeros 10 clientes reales!</p>
+                <img src="1779496351667.png" style="width:100%; max-width:500px; display:block; margin:20px auto 0 auto; border-radius:10px; border: 1px solid var(--borde);">
             </article>
 
             <article class="tarjeta-post">
@@ -309,7 +345,8 @@
                 <h3>Control de Progreso</h3>
                 <div class="progreso-texto">
                     <span>Clientes Conseguidos</span>
-                    <span>0 / 10</span> </div>
+                    <span>0 / 10</span>
+                </div>
                 <div class="progreso-barra-contenedor">
                     <div class="progreso-barra" style="width: 0%;"></div>
                 </div>
@@ -321,12 +358,15 @@
             <div class="bloque-sidebar">
                 <h3>Sobre Venexia Studio</h3>
                 <div class="sobre-mi">
-                    <p>Proyecto enfocado en el Growth Marketing, la automatización con IA y la gestión estratégica de comunidades digitales (Community Management).</p>
+                    <p>Venexia Studio nace desde mi lugar de trabajo donde, luego de una fuerte jornada laboral, tomo la decisión final de empezar a estudiar marketing digital y hacer todo en tiempo real para que la gente lo vea. El objetivo es poder crear una fuerte comunidad que se identifique con mi proyecto y se hagan parte de él junto a mí.</p>
+                    <br>
+                    <p>Será una larga carrera pero muy satisfactoria porque la disciplina y constancia se prefijan con éxito. Venexia Studio se va a dividir en varias fases que espero que seas partícipe.</p>
                 </div>
             </div>
 
             <div class="bloque-sidebar" id="redes">
                 <h3>Sigue mi Evolución</h3>
+                <p class="texto-motivacion">Para que me ayudes motivándome más, ¡sígueme en todas mis redes sociales y sé parte de todo el proceso desde el día 1 hasta lograr el objetivo!</p>
                 <ul class="lista-redes">
                     <li>
                         <a href="https://www.facebook.com/share/1BAfuVGY7v/" class="enlace-red" target="_blank">
