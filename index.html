@@ -193,6 +193,28 @@
             line-height: 1.7;
         }
 
+        /* Contenedor responsivo optimizado para Shorts (Formato vertical 9:16) */
+        .contenedor-video-vertical {
+            position: relative;
+            padding-bottom: 177.77%; /* Relación de aspecto 9:16 para formato móvil vertical */
+            height: 0;
+            overflow: hidden;
+            max-width: 340px; /* Ancho ideal en escritorio para que no ocupe toda la pantalla */
+            margin: 25px auto 0 auto;
+            background: #000;
+            border-radius: 14px;
+            border: 1px solid var(--borde);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .contenedor-video-vertical iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -306,6 +328,7 @@
         <div class="contenedor-header">
             <a href="#" class="logo">Venexia<span>Studio</span></a>
             <nav>
+                <a href="#proceso">Proceso</a>
                 <a href="#articulos">Bitácora</a>
                 <a href="#sobre-proyecto">El Reto</a>
                 <a href="#redes">Contacto</a>
@@ -321,22 +344,38 @@
 
     <div class="contenedor-principal">
         
-        <main class="seccion-articulos" id="articulos">
-            <h2>Bitácora de Aprendizaje</h2>
+        <main class="seccion-articulos">
             
-            <article class="tarjeta-post">
-                <div class="meta-post">Día 1 - El Inicio del Camino</div>
-                <h3>El Salto a la Independencia: Conviértete en Testigo</h3>
-                <p>Hola, soy Brian de 31 años y con una familia hermosa. Trabajo actualmente como cocinero en un restaurante en España y hoy doy el paso inicial para en 365 días intentar dejar de trabajar a otro para trabajar en mi propio proyecto.</p>
-                <p>Inicio con ustedes como testigos en camino al marketing digital, Manejo de IA, manejo de redes sociales y fotografía para tener un studio integral donde nuestros servicios sean tu placer. ¡Acompáñame y sé parte de mi proceso desde 0 hasta tener mis primeros 10 clientes reales!</p>
-                <img src="1779496351667.png" style="width:100%; max-width:500px; display:block; margin:20px auto 0 auto; border-radius:10px; border: 1px solid var(--borde);">
-            </article>
+            <section id="proceso" style="margin-bottom: 50px;">
+                <h2>Proceso en Video</h2>
+                <article class="tarjeta-post">
+                    <div class="meta-post">Día 1 - El Inicio de la Estrategia</div>
+                    <h3>Día 1 en el proceso de 0 en marketing hasta los 10 clientes</h3>
+                    <p>Hoy es el día número uno de este reto. Muestro un resumen de las herramientas y el ecosistema en el que estaré trabajando desde mi ordenador: el control y configuración profesional de las páginas de Facebook, Instagram y TikTok de Venexia Studio, además de apoyarme diariamente en inteligencia artificial (ChatGPT y Gemini) y herramientas de diseño y edición como Canva y CapCut.</p>
+                    
+                    <div class="contenedor-video-vertical">
+                        <iframe src="https://www.youtube.com/embed/HQwxPFOW3mE" title="Venexia Studio - Día 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+            </section>
 
-            <article class="tarjeta-post">
-                <div class="meta-post">Próximamente</div>
-                <h3>Herramientas de IA para un Community Manager Eficiente</h3>
-                <p>En mi próxima publicación detallaré la caja de herramientas digitales que utilizaré para crear copys, programar publicaciones y analizar estadísticas optimizando al máximo mi tiempo disponible.</p>
-            </article>
+            <section id="articulos">
+                <h2>Bitácora de Aprendizaje</h2>
+                
+                <article class="tarjeta-post">
+                    <div class="meta-post">Día 1 - El Inicio del Camino</div>
+                    <h3>El Salto a la Independencia: Conviértete en Testigo</h3>
+                    <p>Hola, soy Brian de 31 años y con una familia hermosa. Trabajo actualmente como cocinero en un restaurante en España y hoy doy el paso inicial para en 365 días intentar dejar de trabajar a otro para trabajar en mi propio proyecto.</p>
+                    <p>Inicio con ustedes como testigos en camino al marketing digital, Manejo de IA, manejo de redes sociales y fotografía para tener un studio integral donde nuestros servicios sean tu placer. ¡Acompáñame y sé parte de mi proceso desde 0 hasta tener mis primeros 10 clientes reales!</p>
+                    <img src="1779496351667.png" style="width:100%; max-width:500px; display:block; margin:20px auto 0 auto; border-radius:10px; border: 1px solid var(--borde);">
+                </article>
+
+                <article class="tarjeta-post">
+                    <div class="meta-post">Próximamente</div>
+                    <h3>Herramientas de IA para un Community Manager Eficiente</h3>
+                    <p>En mi próxima publicación detallaré la caja de herramientas digitales que utilizaré para crear copys, programar publicaciones y analizar estadísticas optimizando al máximo mi tiempo disponible.</p>
+                </article>
+            </section>
         </main>
 
         <aside class="sidebar">
